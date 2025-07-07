@@ -14,7 +14,7 @@ func main() {
 	unidadeOrigem := os.Args[len(os.Args)-1]
 	valoresOrigem := os.Args[1 : len(os.Args)-1]
 	var unidadeDestino string
-	if unidadeOrigem == "celcius" {
+	if unidadeOrigem == "celsius" {
 		unidadeDestino = "fahrenheit"
 	} else if unidadeOrigem == "quilometros" {
 		unidadeDestino = "milhas"
@@ -27,13 +27,13 @@ func main() {
 		if err != nil {
 			fmt.Printf(
 				"O valor %s na posição %d "+
-				"não é um número válido!\n",
+					"não é um número válido!\n",
 				v, i)
 			os.Exit(1)
 		}
 		var valorDestino float64
-		if unidadeOrigem == "celcius" {
-			valorDestino = (valorOrigem * 9 / 5) + 32
+		if unidadeOrigem == "celsius" {
+			valorDestino = (valorOrigem * 1.8) + 32
 		} else {
 			valorDestino = valorOrigem / 1.60934
 		}
